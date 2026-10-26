@@ -1,6 +1,7 @@
 TensorFoldRust is the initial port to RUST of TensorFold project https://github.com/ashhart/TensorFold.
 It's experimental for now since the entire port has been done by GLM 5.3.
 
+DO NOT USE IT AS IT"S UNDER PORTING AT THE MOMENT 26/10/2026
 
 # TensorFold
 
