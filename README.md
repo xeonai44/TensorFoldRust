@@ -1,3 +1,7 @@
+TensorFoldRust is the initial port to RUST of TensorFold project https://github.com/ashhart/TensorFold.
+It's experimental for now since the entire port has been done by GLM 5.3.
+
+
 # TensorFold
 
 TensorFold 1.0.4 serves language models from a Zig binary on Apple Silicon and NVIDIA GPUs.
