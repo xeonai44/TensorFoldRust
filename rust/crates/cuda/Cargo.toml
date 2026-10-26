@@ -1,0 +1,22 @@
+[package]
+name = "tensorfold-cuda"
+description = "The CUDA driver runtime: the driver opened at run time, its ABI resolved by exact symbol, contexts, streams and memory (port of zig/src/cuda)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+# No dependencies: the driver loads through the platform's own dlopen,
+# resolved by hand the way upstream's std.DynLib does (the port's
+# no-libc convention throughout)
+
+# The aot layer (the captured Triton sets) parses the exporter's JSON:
+# serde is the workspace's own (ADRs-002/004's shape; the aot.json is
+# data, not behavior)
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+# cuda/segments.zig imports core's stagger (the row arithmetic and the
+# hook order both sides run) — the same cross-crate edge upstream has
+tensorfold-lanes = { path = "../lanes" }
+

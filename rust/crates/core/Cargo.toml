@@ -1,0 +1,22 @@
+[package]
+name = "tensorfold-core"
+description = "Checkpoint reading (safetensors, ported from zig/src/core/safetensors.zig and checkpoint.zig), tokenizer and model config"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sha2.workspace = true
+tensorfold-safetensors = { path = "../safetensors" }
+serde.workspace = true
+serde_json.workspace = true
+memmap2.workspace = true
+tokenizers.workspace = true
+minijinja = "2"
+
+# The core Metal kernel modules (frags, moe_route, affine_mm) bind the Metal
+# host layer, which exists on macOS alone — the same target gate upstream's
+# native registry applies.
+[target.'cfg(target_os = "macos")'.dependencies]
+tensorfold-metal = { path = "../metal" }

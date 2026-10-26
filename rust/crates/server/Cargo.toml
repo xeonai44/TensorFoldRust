@@ -1,0 +1,22 @@
+[package]
+name = "tensorfold-server"
+description = "The HTTP server: config, auth and the OpenAI/Anthropic routes over the engine contract (port of zig/src/server)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tensorfold-engine = { path = "../engine" }
+axum.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tensorfold-core = { path = "../core" }
+futures = "0.3"
+tokio-stream = "0.1"
+getrandom = "0.3"
+sha2.workspace = true
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }

@@ -1,0 +1,16 @@
+[package]
+name = "tensorfold-glm"
+description = "The GLM-5.3-Flash family: its config from config.json's text_config, its qualification checks and its attention kernel checks (port of zig/src/families/glm)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+# the checkpoint's config is data, not behavior (ADR-002/004's shape)
+serde.workspace = true
+serde_json.workspace = true
+tensorfold-lanes = { path = "../lanes" }
+# the checksummed snapshot envelope (snapshot_file.zig's own)
+tensorfold-core = { path = "../core" }
+tensorfold-safetensors = { path = "../safetensors" }

@@ -1,0 +1,18 @@
+[package]
+name = "tensorfold-qwen35"
+description = "Native Metal Qwen3.5-2B, with its tied affine head and hybrid recurrent/attention state (port of zig/src/families/qwen3_5)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tensorfold-engine = { path = "../engine" }
+tensorfold-lanes = { path = "../lanes" }
+tensorfold-core = { path = "../core" }
+tensorfold-metal = { path = "../metal" }
+tensorfold-safetensors = { path = "../safetensors" }
+serde_json.workspace = true
+
+[dev-dependencies]
+tensorfold-lanes = { path = "../lanes" }

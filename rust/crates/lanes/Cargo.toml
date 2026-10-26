@@ -1,0 +1,16 @@
+[package]
+name = "tensorfold-lanes"
+description = "The lane round loop and its state (port of zig/src/core/lanes: engine, stream, windows, depth rule, planner, proposer, fake backend)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tensorfold-engine = { path = "../engine" }
+bumpalo = "3"
+# std.hash.Wyhash's own algorithm (Zig's Wyhash is the wyhash final v4
+# reference; the keys the learned states are filed under must match
+# upstream's byte for byte, files the two servers share)
+wyhash-final4 = "0.2.2"
+sha2 = "0.10"

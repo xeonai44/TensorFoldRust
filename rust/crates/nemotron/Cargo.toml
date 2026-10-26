@@ -1,0 +1,20 @@
+[package]
+name = "tensorfold-nemotron"
+description = "The Nemotron-H CUDA family: config, draft ids, the glue's host math and references, and the kernel launch layers (port of zig/src/families/nemotron's CUDA half)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tensorfold-cuda = { path = "../cuda" }
+# the checkpoint's namespace and direct reads (cuda_weights/cuda_source)
+tensorfold-core = { path = "../core" }
+# Sampling (upstream re-exports it through lanes)
+tensorfold-lanes = { path = "../lanes" }
+# the checkpoint's Tensor (the loader's mapped reads)
+tensorfold-safetensors = { path = "../safetensors" }
+# config.json reads: serde is the workspace's own (the checkpoint's
+# config is data, not behavior)
+serde.workspace = true
+serde_json.workspace = true

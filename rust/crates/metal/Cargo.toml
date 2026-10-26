@@ -1,0 +1,15 @@
+[package]
+name = "tensorfold-metal"
+description = "The Metal host layer: device, buffers and the embedded kernel metallib (port of zig/src/metal and build.zig's metallib pipeline)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+build = "build.rs"
+
+# The Metal toolchain and metal-rs are Apple-only: upstream's native
+# registry compiles the Metal family on macOS alone (native.backends)
+[target.'cfg(target_os = "macos")'.dependencies]
+tensorfold-safetensors = { path = "../safetensors" }
+metal.workspace = true
+objc.workspace = true

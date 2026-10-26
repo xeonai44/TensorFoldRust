@@ -1,0 +1,10 @@
+[package]
+name = "tensorfold-safetensors"
+description = "The safetensors format as TensorFold reads it: dtypes, header rules and the namespace selection (port of zig/src/core/safetensors.zig)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+serde_json.workspace = true
